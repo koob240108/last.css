@@ -339,6 +339,7 @@ input[type=reset].btn {
   border: none;
   vertical-align: middle;
   outline: none;
+  border-radius: calc(var(--fs) * 0.25);
   font-size: var(--fs-sm);
   padding: 0 1em;
   margin: 0;
@@ -370,6 +371,7 @@ select.input {
   display: block;
   width: 100%;
   color: inherit;
+  border-radius: calc(var(--fs) * 0.25);
   border: 1px solid rgba(var(--fc), calc(0.1 * var(--alpha-times)));
   height: 2.5em;
   font-size: var(--fs);
