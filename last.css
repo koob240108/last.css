@@ -256,8 +256,10 @@ main.container {
   --fs-xs: calc(var(--fs) * 0.75);
   --us: calc(var(--fs) / 2);
 /* colors 颜色 */
-  --fc: 0, 0, 0;
-  --bc: 255, 255, 255;
+  --white: 246, 246, 246;
+  --black: 0, 0, 0;
+  --fc: var(--black);
+  --bc: var(--white);
   --alpha-times: 1;
 /* 样式 */
   line-height: 1;
@@ -267,15 +269,15 @@ main.container {
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --fc: 0, 0, 0;
-    --bc: 255, 255, 255;
+    --fc: var(--black);
+    --bc: var(--white);
     --alpha-times: 1;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --fc: 230, 230, 230;
-    --bc: 0, 0, 0;
+    --fc: var(--white);
+    --bc: var(--black);
     --alpha-times: 2;
   }
 }

@@ -6,17 +6,19 @@
   --us: calc(var(--fs) / 2) // unit size
 
   /* colors 颜色 */
-  --fc: 0,0,0 // foreground color
-  --bc: 255,255,255 // background color
+  --white: 246,246,246
+  --black: 0,0,0
+  --fc: var(--black) // foreground color
+  --bc: var(--white) // background color
   --alpha-times: 1
   @media (prefers-color-scheme: light)
-    --fc: 0,0,0 // foreground color
-    --bc: 255,255,255 // background color
+    --fc: var(--black) // foreground color
+    --bc: var(--white) // background color
     --alpha-times: 1
 
   @media (prefers-color-scheme: dark)
-    --fc: 230,230,230 // foreground color
-    --bc: 0,0,0 // background color
+    --fc: var(--white) // foreground color
+    --bc: var(--black) // background color
     --alpha-times: 2
 
   /* 样式 */
