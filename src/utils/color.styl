@@ -1,0 +1,12 @@
+alpha-times(alpha)
+  s('calc(%s * var(--alpha-times))', alpha)
+fc(alpha = false)
+  if alpha
+    s('rgba(%s, %s)', var(--fc), alpha-times(alpha))
+  else
+    'rgb(%s)' % var(--fc)
+bc(alpha = false)
+  if alpha
+    'rgba(%s, %s)' % var(--bc) alpha-times(alpha)
+  else
+    'rgb(%s)' % var(--bc)

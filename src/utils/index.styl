@@ -1,0 +1,11 @@
+@import './color.styl'
+@import './size.styl'
+
+focusable()
+  &:focus
+    outline: solid fc(.2)
+
+clickable()
+  focusable()
+  &:active
+    opacity: .8

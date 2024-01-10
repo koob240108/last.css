@@ -1,0 +1,15 @@
+fs(times = false)
+  if times
+    'calc(var(--fs) * %s)' % times
+  else
+    var(--fs)
+fs-sm()
+  var(--fs-sm)
+fs-xs()
+  var(--fs-xs)
+
+us(times = 1) // unit-size
+  if times
+    'calc(var(--us) * %s)' % times
+  else
+    var(--us)

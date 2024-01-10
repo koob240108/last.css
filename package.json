@@ -7,8 +7,8 @@
   "author": "PPz",
   "license": "UNLICENSED",
   "scripts": {
-    "watch": "stylus -w ./last.styl",
-    "build": "stylus ./last.styl"
+    "watch": "stylus -w ./src/index.styl -o ./last.css",
+    "build": "stylus ./src/index.styl -o ./last.css"
   },
   "devDependencies": {
     "stylus": "^0.62.0"

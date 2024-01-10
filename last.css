@@ -43,11 +43,11 @@ a.btn {
   color: rgb(var(--fc));
   cursor: pointer;
 }
-button.btn:active,
-a.btn:active {
-  opacity: 0.8;
-}
 button.btn:focus,
 a.btn:focus {
   outline: solid rgba(var(--fc), calc(0.2 * var(--alpha-times)));
+}
+button.btn:active,
+a.btn:active {
+  opacity: 0.8;
 }

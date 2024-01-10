@@ -1,0 +1,26 @@
+:root
+  /* sizes 尺寸 */
+  --fs: 16px // font size
+  --fs-sm: calc(var(--fs) * .875)
+  --fs-xs: calc(var(--fs) * .75)
+  --us: calc(var(--fs) / 2) // unit size
+
+  /* colors 颜色 */
+  --fc: 0,0,0 // foreground color
+  --bc: 255,255,255 // background color
+  --alpha-times: 1
+  @media (prefers-color-scheme: light)
+    --fc: 0,0,0
+    --bc: 255,255,255
+    --alpha-times: 1
+
+  @media (prefers-color-scheme: dark)
+    --fc: 255,255,255
+    --bc: 0,0,0
+    --alpha-times: 2
+
+  /* 样式 */
+  line-height: 1
+  font-size: var(--fs)
+  color: fc()
+  background-color: bc()
