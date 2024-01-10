@@ -5,5 +5,12 @@
   "main": "last.css",
   "keywords": [],
   "author": "PPz",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "scripts": {
+    "watch": "stylus -w ./last.styl",
+    "build": "stylus ./last.styl"
+  },
+  "devDependencies": {
+    "stylus": "^0.62.0"
+  }
 }

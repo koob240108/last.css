@@ -1,0 +1,27 @@
+fs(times = false)
+  if times
+    'calc(var(--fs) * %s)' % times
+  else
+    var(--fs)
+
+us(times = 1) // unit-size
+  if times
+    'calc(var(--us) * %s)' % times
+  else
+    var(--us)
+
+:root
+  --fs: 16px 
+  --us: calc(var(--fs) / 2)
+
+  font-size: var(--fs)
+  line-height: 1
+
+button.btn
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  border: none
+  outline: none
+  line-height: 2
+  font-size: fs()

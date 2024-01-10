@@ -1,11 +1,9 @@
 :root {
-  --fs: 16px; /* font-size */
-  --us: calc(var(--fs) / 2); /* unit-size */
-
+  --fs: 16px;
+  --us: calc(var(--fs) / 2);
   font-size: var(--fs);
   line-height: 1;
 }
-
 button.btn {
   box-sizing: border-box;
   padding: 0;
