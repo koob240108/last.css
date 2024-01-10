@@ -231,6 +231,24 @@
     grid-column: span 12;
   }
 }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 calc(var(--us) * 2);
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    padding: 0 calc(var(--us) * 4);
+  }
+}
+main.container {
+  margin-bottom: calc(var(--us) * 4);
+}
+@media screen and (min-width: 1200px) {
+  main.container {
+    margin-bottom: calc(var(--us) * 8);
+  }
+}
 :root {
 /* sizes 尺寸 */
   --fs: 16px;
@@ -284,6 +302,15 @@ button.btn:active,
 a.btn:active {
   opacity: 0.88;
 }
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 1em 0;
+  line-height: 1.5;
+}
 h1,
 h2,
 h3,
@@ -304,8 +331,4 @@ h3 + h4 {
 }
 h4 + h5 {
   margin-top: 0;
-}
-p {
-  margin: 1em 0;
-  line-height: 1.5;
 }

@@ -1,4 +1,13 @@
 .container
   max-width: 1200px
   margin: 0 auto
-  padding: 0 15px
+  +xs()
+    padding: 0 us(2)
+  +xl()
+    padding: 0 us(4)
+
+main.container
+  +xs()
+    margin-bottom: us(4)
+  +xl()
+    margin-bottom: us(8)
