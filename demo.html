@@ -21,9 +21,21 @@
       <article>
         <h2>button</h2>
         
-        <div>
-          <button class="btn" tabindex="0">按钮 button</button>
-          <a class="btn" tabindex="0">按钮 a</a>
+        <div class="row" style="display: inline-block">
+          <a class="btn" tabindex="0">a</a>
+          <button class="btn">button</button>
+          <input class="btn" type="submit">
+          <input class="btn" type="reset">
+        </div>
+        <blockquote>a.btn 需要 focus 状态时，需添加 tabindex 属性</blockquote>
+      </article>
+
+      <article>
+        <h2>input</h2>
+        <div class="col" style="max-width: 500px">
+          <input class="input">
+          <input class="input" type="text">
+          <input class="input" type="password">
         </div>
       </article>
 

@@ -1,0 +1,20 @@
+a, button, input[type=submit], input[type=reset]
+  &.btn
+    box-sizing: border-box
+    display: inline-block
+    border: none
+    vertical-align: middle // 否则 button 和 a 会错位
+    outline: none
+
+    clickable()
+
+    font-size: fs-sm()
+    padding: 0 1em
+    margin: 0
+    line-height: 2
+    background-color: fc(.1)
+    color: fc()
+    cursor: pointer
+
+a.btn
+  text-align: center

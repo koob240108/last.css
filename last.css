@@ -249,6 +249,17 @@ main.container {
     margin-bottom: calc(var(--us) * 8);
   }
 }
+.row {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--us) * 2);
+}
+.row > * {
+  flex: 1;
+}
+.col > *:not(:last-child) {
+  margin-bottom: calc(var(--us) * 2);
+}
 :root {
 /* sizes 尺寸 */
   --fs: 16px;
@@ -281,37 +292,22 @@ main.container {
     --alpha-times: 2;
   }
 }
-button.btn,
-a.btn {
-  box-sizing: border-box;
-  display: inline-block;
-  border: none;
-  vertical-align: middle;
-  outline: none;
-  font-size: var(--fs-sm);
-  padding: 0 1em;
-  margin: 0;
-  line-height: 2;
-  background-color: rgba(var(--fc), calc(0.1 * var(--alpha-times)));
-  color: rgb(var(--fc));
-  cursor: pointer;
-}
-button.btn:focus,
-a.btn:focus {
-  outline: solid rgba(var(--fc), calc(0.2 * var(--alpha-times)));
-}
-button.btn:active,
-a.btn:active {
-  opacity: 0.88;
-}
 html,
 body {
   margin: 0;
   padding: 0;
 }
-p {
+p,
+blockquote {
   margin: 1em 0;
   line-height: 1.5;
+}
+blockquote {
+  border-left: calc(var(--us) * 0.5) solid rgba(var(--fc), calc(0.1 * var(--alpha-times)));
+  color: rgba(var(--fc), calc(0.8 * var(--alpha-times)));
+  background-color: rgba(var(--fc), calc(0.01 * var(--alpha-times)));
+  padding: calc(var(--us) * 1) 0 calc(var(--us) * 1) 1em;
+  font-size: var(--fs-sm);
 }
 h1,
 h2,
@@ -333,4 +329,55 @@ h3 + h4 {
 }
 h4 + h5 {
   margin-top: 0;
+}
+a.btn,
+button.btn,
+input[type=submit].btn,
+input[type=reset].btn {
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+  outline: none;
+  font-size: var(--fs-sm);
+  padding: 0 1em;
+  margin: 0;
+  line-height: 2;
+  background-color: rgba(var(--fc), calc(0.1 * var(--alpha-times)));
+  color: rgb(var(--fc));
+  cursor: pointer;
+}
+a.btn:focus,
+button.btn:focus,
+input[type=submit].btn:focus,
+input[type=reset].btn:focus {
+  outline: solid rgba(var(--fc), calc(0.2 * var(--alpha-times)));
+}
+a.btn:active,
+button.btn:active,
+input[type=submit].btn:active,
+input[type=reset].btn:active {
+  opacity: 0.88;
+}
+a.btn {
+  text-align: center;
+}
+input:not([type]),
+input[type=text],
+input[type=password] {
+  outline: none;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  color: inherit;
+  border: 1px solid rgba(var(--fc), calc(0.1 * var(--alpha-times)));
+  height: 2.5em;
+  font-size: var(--fs);
+  padding: 0 0.75em;
+}
+input:not([type]):focus,
+input[type=text]:focus,
+input[type=password]:focus {
+  border-color: rgba(var(--fc), calc(0.3 * var(--alpha-times)));
 }
