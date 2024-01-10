@@ -49,5 +49,30 @@ a.btn:focus {
 }
 button.btn:active,
 a.btn:active {
-  opacity: 0.8;
+  opacity: 0.88;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  margin: 2em 0 1em;
+  line-height: 1;
+}
+h1 + h2 {
+  margin-top: 0;
+}
+h2 + h3 {
+  margin-top: 0;
+}
+h3 + h4 {
+  margin-top: 0;
+}
+h4 + h5 {
+  margin-top: 0;
+}
+p {
+  margin: 1em 0;
+  line-height: 1.5;
 }
