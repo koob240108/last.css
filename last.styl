@@ -3,6 +3,10 @@ fs(times = false)
     'calc(var(--fs) * %s)' % times
   else
     var(--fs)
+fs-sm()
+  var(--fs-sm)
+fs-xs()
+  var(--fs-xs)
 
 us(times = 1) // unit-size
   if times
@@ -10,18 +14,61 @@ us(times = 1) // unit-size
   else
     var(--us)
 
+alpha-times(alpha)
+  s('calc(%s * var(--alpha-times))', alpha)
+fc(alpha = false)
+  if alpha
+    s('rgba(%s, %s)', var(--fc), alpha-times(alpha))
+  else
+    'rgb(%s)' % var(--fc)
+bc(alpha = false)
+  if alpha
+    'rgba(%s, %s)' % var(--bc) alpha-times(alpha)
+  else
+    'rgb(%s)' % var(--bc)
+
 :root
-  --fs: 16px 
-  --us: calc(var(--fs) / 2)
+  /* sizes 尺寸 */
+  --fs: 16px // font size
+  --fs-sm: calc(var(--fs) * .875)
+  --fs-xs: calc(var(--fs) * .75)
+  --us: calc(var(--fs) / 2) // unit size
 
-  font-size: var(--fs)
+  /* colors 颜色 */
+  --fc: 0,0,0 // foreground color
+  --bc: 255,255,255 // background color
+  --alpha-times: 1
+  @media (prefers-color-scheme: light)
+    --fc: 0,0,0
+    --bc: 255,255,255
+    --alpha-times: 1
+
+  @media (prefers-color-scheme: dark)
+    --fc: 255,255,255
+    --bc: 0,0,0
+    --alpha-times: 2
+
+  /* 样式 */
   line-height: 1
+  font-size: var(--fs)
+  color: fc()
+  background-color: bc()
 
-button.btn
+button.btn, a.btn
   box-sizing: border-box
-  padding: 0
-  margin: 0
+  display: inline-block
   border: none
+  vertical-align: middle // 否则 button 和 a 会错位
   outline: none
+
+  font-size: fs-sm()
+  padding: 0 1em
+  margin: 0
   line-height: 2
-  font-size: fs()
+  background-color: fc(.1)
+  color: fc()
+  cursor: pointer
+  &:active
+    opacity: .8
+  &:focus
+    outline: solid fc(.2)

@@ -1,15 +1,53 @@
 :root {
+/* sizes 尺寸 */
   --fs: 16px;
+  --fs-sm: calc(var(--fs) * 0.875);
+  --fs-xs: calc(var(--fs) * 0.75);
   --us: calc(var(--fs) / 2);
-  font-size: var(--fs);
+/* colors 颜色 */
+  --fc: 0, 0, 0;
+  --bc: 255, 255, 255;
+  --alpha-times: 1;
+/* 样式 */
   line-height: 1;
-}
-button.btn {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  border: none;
-  outline: none;
-  line-height: 2;
   font-size: var(--fs);
+  color: rgb(var(--fc));
+  background-color: rgb(var(--bc));
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --fc: 0, 0, 0;
+    --bc: 255, 255, 255;
+    --alpha-times: 1;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fc: 255, 255, 255;
+    --bc: 0, 0, 0;
+    --alpha-times: 2;
+  }
+}
+button.btn,
+a.btn {
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+  outline: none;
+  font-size: var(--fs-sm);
+  padding: 0 1em;
+  margin: 0;
+  line-height: 2;
+  background-color: rgba(var(--fc), calc(0.1 * var(--alpha-times)));
+  color: rgb(var(--fc));
+  cursor: pointer;
+}
+button.btn:active,
+a.btn:active {
+  opacity: 0.8;
+}
+button.btn:focus,
+a.btn:focus {
+  outline: solid rgba(var(--fc), calc(0.2 * var(--alpha-times)));
 }
