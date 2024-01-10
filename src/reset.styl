@@ -8,7 +8,10 @@ p, blockquote
 blockquote
   border-left: us(.5) solid fc(.1)
   color: fc(.8)
-  background-color: fc(.02)
+  +light()
+    background-color: fc(.02)
+  +dark()
+    background-color: fc(.06)
   padding: us() 0 us() 1em
   font-size: fs-sm()
 

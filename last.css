@@ -302,9 +302,18 @@ blockquote {
 blockquote {
   border-left: calc(var(--us) * 0.5) solid rgba(var(--fc), 0.1);
   color: rgba(var(--fc), 0.8);
-  background-color: rgba(var(--fc), 0.02);
   padding: calc(var(--us) * 1) 0 calc(var(--us) * 1) 1em;
   font-size: var(--fs-sm);
+}
+@media (prefers-color-scheme: light) {
+  blockquote {
+    background-color: rgba(var(--fc), 0.02);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    background-color: rgba(var(--fc), 0.06);
+  }
 }
 h1,
 h2,
