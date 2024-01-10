@@ -305,7 +305,7 @@ blockquote {
 blockquote {
   border-left: calc(var(--us) * 0.5) solid rgba(var(--fc), calc(0.1 * var(--alpha-times)));
   color: rgba(var(--fc), calc(0.8 * var(--alpha-times)));
-  background-color: rgba(var(--fc), calc(0.01 * var(--alpha-times)));
+  background-color: rgba(var(--fc), calc(0.02 * var(--alpha-times)));
   padding: calc(var(--us) * 1) 0 calc(var(--us) * 1) 1em;
   font-size: var(--fs-sm);
 }
@@ -362,9 +362,8 @@ input[type=reset].btn:active {
 a.btn {
   text-align: center;
 }
-input:not([type]),
-input[type=text],
-input[type=password] {
+input.input,
+select.input {
   outline: none;
   background-color: transparent;
   box-sizing: border-box;
@@ -376,8 +375,7 @@ input[type=password] {
   font-size: var(--fs);
   padding: 0 0.75em;
 }
-input:not([type]):focus,
-input[type=text]:focus,
-input[type=password]:focus {
+input.input:focus,
+select.input:focus {
   border-color: rgba(var(--fc), calc(0.3 * var(--alpha-times)));
 }
