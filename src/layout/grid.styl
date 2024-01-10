@@ -1,0 +1,31 @@
+.resp_grid // responsive grid
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+
+  &:not(.no_default_gap)
+    grid-gap: us(2)
+
++xs()
+  for num in (1..12)
+    .xs_col_{num}
+      grid-column: span num
++sm()
+  for num in (1..12)
+    .sm_col_{num}
+      grid-column: span num
++md()
+  for num in (1..12)
+    .md_col_{num}
+      grid-column: span num
++lg()
+  for num in (1..12)
+    .lg_col_{num}
+      grid-column: span num
++xl()
+  for num in (1..12)
+    .xl_col_{num}
+      grid-column: span num
++xxl()
+  for num in (1..12)
+    .xxl_col_{num}
+      grid-column: span num
