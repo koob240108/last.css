@@ -2,6 +2,28 @@ html, body
   margin: 0
   padding: 0
 
+a
+  text-decoration: none
+  +dark()
+    color: #8ab4f8
+  +light()
+    color: #1a0dab
+  &:hover
+    text-decoration: underline
+
+code
+  padding: 0 fs(.25)
+  display: inline-block
+  font-weight: lighter
+  +light()
+    background-color: fc(.03)
+  +dark()
+    background-color: fc(.06)
+  &:not(:first-child)
+    margin-left: fs(.25)
+  &:not(:last-child)
+    margin-right: fs(.25)
+
 p, blockquote
   margin: 1em 0
   line-height: 1.5

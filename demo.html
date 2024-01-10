@@ -21,18 +21,26 @@
       <article>
         <h2>button</h2>
         
-        <div class="row" style="display: inline-block">
+        <div>
           <a class="btn" tabindex="0">a</a>
           <button class="btn">button</button>
           <input class="btn" type="submit">
           <input class="btn" type="reset">
         </div>
-        <blockquote>a.btn 需要 focus 状态时，需添加 tabindex 属性</blockquote>
+        <blockquote><code>.btn</code>是<code>inline-block</code>，可以用空格自然隔开，或使用<code>.box_x</code></blockquote>
+        <blockquote><code>a.btn</code>需要<code>:focus</code>状态时，需添加<code>tabindex</code>属性</blockquote>
       </article>
 
       <article>
+        <h2>a</h2>
+        <div class="box_x">
+          <a href="#">这是一个 `a`</a>
+          <a href="#/hah">这是另一个 `a`</a>
+        </div>
+      </article>
+      <article>
         <h2>input</h2>
-        <div class="col" style="max-width: 500px">
+        <div class="box_y" style="max-width: 500px">
           <input class="input" value="no type">
           <input class="input" type="text" value="type: text">
           <input class="input" type="password" value="type: password">
