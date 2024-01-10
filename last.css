@@ -271,7 +271,6 @@ main.container {
   --black: 0, 0, 0;
   --fc: var(--black);
   --bc: var(--white);
-  --alpha-times: 1;
 /* 样式 */
   line-height: 1;
   font-size: var(--fs);
@@ -282,14 +281,12 @@ main.container {
   :root {
     --fc: var(--black);
     --bc: var(--white);
-    --alpha-times: 1;
   }
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --fc: var(--white);
     --bc: var(--black);
-    --alpha-times: 2;
   }
 }
 html,
@@ -303,9 +300,9 @@ blockquote {
   line-height: 1.5;
 }
 blockquote {
-  border-left: calc(var(--us) * 0.5) solid rgba(var(--fc), calc(0.1 * var(--alpha-times)));
-  color: rgba(var(--fc), calc(0.8 * var(--alpha-times)));
-  background-color: rgba(var(--fc), calc(0.02 * var(--alpha-times)));
+  border-left: calc(var(--us) * 0.5) solid rgba(var(--fc), 0.1);
+  color: rgba(var(--fc), 0.8);
+  background-color: rgba(var(--fc), 0.02);
   padding: calc(var(--us) * 1) 0 calc(var(--us) * 1) 1em;
   font-size: var(--fs-sm);
 }
@@ -344,7 +341,7 @@ input[type=reset].btn {
   padding: 0 1em;
   margin: 0;
   line-height: 2;
-  background-color: rgba(var(--fc), calc(0.1 * var(--alpha-times)));
+  background-color: rgba(var(--fc), 0.1);
   color: rgb(var(--fc));
   cursor: pointer;
 }
@@ -352,7 +349,7 @@ a.btn:focus,
 button.btn:focus,
 input[type=submit].btn:focus,
 input[type=reset].btn:focus {
-  outline: solid rgba(var(--fc), calc(0.2 * var(--alpha-times)));
+  outline: solid rgba(var(--fc), 0.2);
 }
 a.btn:active,
 button.btn:active,
@@ -372,12 +369,40 @@ select.input {
   width: 100%;
   color: inherit;
   border-radius: calc(var(--fs) * 0.25);
-  border: 1px solid rgba(var(--fc), calc(0.1 * var(--alpha-times)));
+  border: 1px solid rgba(var(--fc), 0.1);
   height: 2.5em;
   font-size: var(--fs);
   padding: 0 0.75em;
 }
 input.input:focus,
 select.input:focus {
-  border-color: rgba(var(--fc), calc(0.3 * var(--alpha-times)));
+  border-color: rgba(var(--fc), 0.3);
+}
+hr {
+  height: 1em;
+  margin: 1em 0;
+  border: none;
+  position: relative;
+}
+hr::before {
+  content: '';
+  display: block;
+  height: 1px;
+  background-color: rgba(var(--fc), 0.5);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+hr::after {
+  display: block;
+  content: attr(data-title);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--fs-sm);
+  color: rgba(var(--fc), 0.5);
+  background-color: rgb(var(--bc));
+  padding: 0 0.5em;
 }

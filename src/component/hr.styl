@@ -1,0 +1,29 @@
+hr
+  height: 1em
+  margin: 1em 0
+  border: none
+  position: relative
+
+  &::before
+    content: ''
+    display: block
+
+    height: 1px
+    background-color: fc(.5)
+    position: absolute
+    top: 50%
+    left: 0
+    right: 0
+  
+  &::after
+    display: block
+    content: attr(data-title)
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+    font-size: fs-sm()
+    color: fc(.5)
+    background-color: bc()
+    padding: 0 .5em

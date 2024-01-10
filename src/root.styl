@@ -10,16 +10,13 @@
   --black: 0,0,0
   --fc: var(--black) // foreground color
   --bc: var(--white) // background color
-  --alpha-times: 1
-  @media (prefers-color-scheme: light)
+  +light()
     --fc: var(--black) // foreground color
     --bc: var(--white) // background color
-    --alpha-times: 1
 
-  @media (prefers-color-scheme: dark)
+  +dark()
     --fc: var(--white) // foreground color
     --bc: var(--black) // background color
-    --alpha-times: 2
 
   /* 样式 */
   line-height: 1
