@@ -13,9 +13,14 @@ a, button, input[type=submit], input[type=reset]
     padding: 0 1em
     height: 2.5em
     margin: 0
+    cursor: pointer
+
     background-color: fc(.1)
     color: fc()
-    cursor: pointer
+    &.contract
+      background-color: fc()
+      color: bc()
+    
     &.fw
       display: block
       width: 100%

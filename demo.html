@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="last.css">
     <style>
       .resp_grid > div {
-        background: rgba(var(--fc), .5);
-        height: var(--fs);
+        background: rgba(var(--fc), .2);
+        height: calc(var(--fs) * 3);
       }
     </style>
   </head>
@@ -26,6 +26,7 @@
           <button class="btn">button</button>
           <input class="btn" type="submit">
           <input class="btn" type="reset">
+          <button class="btn contract">contract button</button>
         </div>
         <blockquote><code>.btn</code>是<code>inline-block</code>，可以用空格自然隔开，或使用<code>.box_x</code></blockquote>
         <blockquote><code>a.btn</code>需要<code>:focus</code>状态时，需添加<code>tabindex</code>属性</blockquote>

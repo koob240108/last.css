@@ -382,9 +382,9 @@ input[type=reset].btn {
   padding: 0 1em;
   height: 2.5em;
   margin: 0;
+  cursor: pointer;
   background-color: rgba(var(--fc), 0.1);
   color: rgb(var(--fc));
-  cursor: pointer;
 }
 a.btn:focus,
 button.btn:focus,
@@ -397,6 +397,13 @@ button.btn:active,
 input[type=submit].btn:active,
 input[type=reset].btn:active {
   opacity: 0.88;
+}
+a.btn.contract,
+button.btn.contract,
+input[type=submit].btn.contract,
+input[type=reset].btn.contract {
+  background-color: rgb(var(--fc));
+  color: rgb(var(--bc));
 }
 a.btn.fw,
 button.btn.fw,
