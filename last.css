@@ -274,7 +274,7 @@ main.container {
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --fc: 255, 255, 255;
+    --fc: 230, 230, 230;
     --bc: 0, 0, 0;
     --alpha-times: 2;
   }
