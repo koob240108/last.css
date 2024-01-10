@@ -11,11 +11,17 @@ a, button, input[type=submit], input[type=reset]
 
     font-size: fs-sm()
     padding: 0 1em
+    height: 2.5em
     margin: 0
-    line-height: 2
     background-color: fc(.1)
     color: fc()
     cursor: pointer
+    &.fw
+      display: block
+      width: 100%
+    &.big, &.fw // full width 就大
+      font-size: fs()
 
 a.btn
   text-align: center
+  line-height: 2.5em

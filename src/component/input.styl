@@ -1,4 +1,7 @@
-input.input, select.input
+input.input,
+select.input,
+label.input > input:not([type]),
+label.input > input[type=password]
   outline: none
   background-color: transparent
   box-sizing: border-box
@@ -14,3 +17,13 @@ input.input, select.input
   padding: 0 .75em
   &:focus
     border-color: fc(.3)
+
+label.input
+  display: block
+  margin: 1em 0
+  input:not([type]),
+  input[type=text]
+  input[type=password]
+    margin-top: .5em
+  & + .btn
+    margin-top: 1.5em

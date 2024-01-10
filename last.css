@@ -380,8 +380,8 @@ input[type=reset].btn {
   border-radius: calc(var(--fs) * 0.25);
   font-size: var(--fs-sm);
   padding: 0 1em;
+  height: 2.5em;
   margin: 0;
-  line-height: 2;
   background-color: rgba(var(--fc), 0.1);
   color: rgb(var(--fc));
   cursor: pointer;
@@ -398,11 +398,31 @@ input[type=submit].btn:active,
 input[type=reset].btn:active {
   opacity: 0.88;
 }
+a.btn.fw,
+button.btn.fw,
+input[type=submit].btn.fw,
+input[type=reset].btn.fw {
+  display: block;
+  width: 100%;
+}
+a.btn.big,
+button.btn.big,
+input[type=submit].btn.big,
+input[type=reset].btn.big,
+a.btn.fw,
+button.btn.fw,
+input[type=submit].btn.fw,
+input[type=reset].btn.fw {
+  font-size: var(--fs);
+}
 a.btn {
   text-align: center;
+  line-height: 2.5em;
 }
 input.input,
-select.input {
+select.input,
+label.input > input:not([type]),
+label.input > input[type=password] {
   outline: none;
   background-color: transparent;
   box-sizing: border-box;
@@ -416,8 +436,22 @@ select.input {
   padding: 0 0.75em;
 }
 input.input:focus,
-select.input:focus {
+select.input:focus,
+label.input > input:not([type]):focus,
+label.input > input[type=password]:focus {
   border-color: rgba(var(--fc), 0.3);
+}
+label.input {
+  display: block;
+  margin: 1em 0;
+}
+label.input input:not([type]),
+label.input input[type=text],
+label.input input[type=password] {
+  margin-top: 0.5em;
+}
+label.input + .btn {
+  margin-top: 1.5em;
 }
 hr {
   height: 1em;
