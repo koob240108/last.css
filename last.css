@@ -261,6 +261,16 @@ hr::after {
   background-color: rgb(var(--bc));
   padding: 0 0.5em;
 }
+nav.plain > ul {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+nav.plain > ul > li {
+  display: inline-block;
+  padding-left: 0;
+}
 .container {
   max-width: 900px;
   margin: 0 auto;
