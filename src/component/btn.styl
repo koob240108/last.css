@@ -15,7 +15,10 @@ a, button, input[type=submit], input[type=reset]
     margin: 0
     cursor: pointer
 
-    background-color: fc(.1)
+    +light()
+      background-color: fc(.1)
+    +dark()
+      background-color: fc(.16)
     color: fc()
     &.contract
       background-color: fc()

@@ -11,7 +11,10 @@ label.input > input[type=password]
 
   border-radius()
 
-  border: 1px solid fc(.1)
+  +light()
+    border: 1px solid fc(.1)
+  +dark()
+    border: 1px solid fc(.2)
   height: 2.5em
   font-size: fs()
   padding: 0 .75em
