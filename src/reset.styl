@@ -11,7 +11,7 @@ a
   &:hover
     text-decoration: underline
 
-code
+code:not(pre code)
   padding: 0 fs(.25)
   display: inline-block
   font-weight: lighter
@@ -23,6 +23,15 @@ code
     margin-left: fs(.25)
   &:not(:last-child)
     margin-right: fs(.25)
+
+pre:has(code)
+  line-height: 1.5
+  margin: 1em 0
+  padding: 1em 1.5em
+  +light()
+    background-color: fc(.03)
+  +dark()
+    background-color: fc(.088)
 
 p, blockquote
   margin: 1em 0

@@ -1,7 +1,6 @@
-input.input,
-select.input,
-label.input > input:not([type]),
-label.input > input[type=password]
+.input,
+label.field > input:not([type]),
+label.field > input[type=password]
   outline: none
   background-color: transparent
   box-sizing: border-box
@@ -21,7 +20,14 @@ label.input > input[type=password]
   &:focus
     border-color: fc(.3)
 
-label.input
+.simple_style
+  input:not([type]),
+  input[type=password],
+  input[type=text],
+  select
+    @extends .input
+
+label.field
   display: block
   margin: 1em 0
   input:not([type]),

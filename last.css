@@ -19,26 +19,41 @@ a {
 a:hover {
   text-decoration: underline;
 }
-code {
+code:not(pre code) {
   padding: 0 calc(var(--fs) * 0.25);
   display: inline-block;
   font-weight: lighter;
 }
 @media (prefers-color-scheme: light) {
-  code {
+  code:not(pre code) {
     background-color: rgba(var(--fc), 0.03);
   }
 }
 @media (prefers-color-scheme: dark) {
-  code {
+  code:not(pre code) {
     background-color: rgba(var(--fc), 0.06);
   }
 }
-code:not(:first-child) {
+code:not(pre code):not(:first-child) {
   margin-left: calc(var(--fs) * 0.25);
 }
-code:not(:last-child) {
+code:not(pre code):not(:last-child) {
   margin-right: calc(var(--fs) * 0.25);
+}
+pre:has(code) {
+  line-height: 1.5;
+  margin: 1em 0;
+  padding: 1em 1.5em;
+}
+@media (prefers-color-scheme: light) {
+  pre:has(code) {
+    background-color: rgba(var(--fc), 0.03);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  pre:has(code) {
+    background-color: rgba(var(--fc), 0.088);
+  }
 }
 p,
 blockquote {
@@ -111,10 +126,10 @@ h4 + h5 {
     --bc: var(--black);
   }
 }
-a.btn,
-button.btn,
-input[type=submit].btn,
-input[type=reset].btn {
+.btn,
+.simple_style button,
+.simple_style input[type=submit],
+.simple_style input[type=reset] {
   box-sizing: border-box;
   display: inline-block;
   border: none;
@@ -128,66 +143,69 @@ input[type=reset].btn {
   cursor: pointer;
   color: rgb(var(--fc));
 }
-a.btn:focus,
-button.btn:focus,
-input[type=submit].btn:focus,
-input[type=reset].btn:focus {
+.btn:focus,
+.simple_style button:focus,
+.simple_style input[type=submit]:focus,
+.simple_style input[type=reset]:focus {
   outline: solid rgba(var(--fc), 0.2);
 }
-a.btn:active,
-button.btn:active,
-input[type=submit].btn:active,
-input[type=reset].btn:active {
+.btn:active,
+.simple_style button:active,
+.simple_style input[type=submit]:active,
+.simple_style input[type=reset]:active {
   opacity: 0.88;
 }
 @media (prefers-color-scheme: light) {
-  a.btn,
-  button.btn,
-  input[type=submit].btn,
-  input[type=reset].btn {
+  .btn,
+  .simple_style button,
+  .simple_style input[type=submit],
+  .simple_style input[type=reset] {
     background-color: rgba(var(--fc), 0.1);
   }
 }
 @media (prefers-color-scheme: dark) {
-  a.btn,
-  button.btn,
-  input[type=submit].btn,
-  input[type=reset].btn {
+  .btn,
+  .simple_style button,
+  .simple_style input[type=submit],
+  .simple_style input[type=reset] {
     background-color: rgba(var(--fc), 0.16);
   }
 }
-a.btn.contract,
-button.btn.contract,
-input[type=submit].btn.contract,
-input[type=reset].btn.contract {
+.btn.contract,
+.simple_style button.contract,
+.simple_style input[type=submit].contract,
+.simple_style input[type=reset].contract {
   background-color: rgb(var(--fc));
   color: rgb(var(--bc));
 }
-a.btn.fw,
-button.btn.fw,
-input[type=submit].btn.fw,
-input[type=reset].btn.fw {
+.btn.fw,
+.simple_style button.fw,
+.simple_style input[type=submit].fw,
+.simple_style input[type=reset].fw {
   display: block;
   width: 100%;
 }
-a.btn.big,
-button.btn.big,
-input[type=submit].btn.big,
-input[type=reset].btn.big,
-a.btn.fw,
-button.btn.fw,
-input[type=submit].btn.fw,
-input[type=reset].btn.fw {
+.btn.big,
+.simple_style button.big,
+.simple_style input[type=submit].big,
+.simple_style input[type=reset].big,
+.btn.fw,
+.simple_style button.fw,
+.simple_style input[type=submit].fw,
+.simple_style input[type=reset].fw {
   font-size: var(--fs);
 }
 a.btn {
   text-align: center;
   line-height: 2.5em;
 }
-input.input,
-select.input,
-label.input > input:not([type]),
-label.input > input[type=password] {
+.input,
+label.field > input:not([type]),
+label.field > input[type=password],
+.simple_style input:not([type]),
+.simple_style input[type=password],
+.simple_style input[type=text],
+.simple_style select {
   outline: none;
   background-color: transparent;
   box-sizing: border-box;
@@ -200,37 +218,46 @@ label.input > input[type=password] {
   padding: 0 0.75em;
 }
 @media (prefers-color-scheme: light) {
-  input.input,
-  select.input,
-  label.input > input:not([type]),
-  label.input > input[type=password] {
+  .input,
+  label.field > input:not([type]),
+  label.field > input[type=password],
+  .simple_style input:not([type]),
+  .simple_style input[type=password],
+  .simple_style input[type=text],
+  .simple_style select {
     border: 1px solid rgba(var(--fc), 0.1);
   }
 }
 @media (prefers-color-scheme: dark) {
-  input.input,
-  select.input,
-  label.input > input:not([type]),
-  label.input > input[type=password] {
+  .input,
+  label.field > input:not([type]),
+  label.field > input[type=password],
+  .simple_style input:not([type]),
+  .simple_style input[type=password],
+  .simple_style input[type=text],
+  .simple_style select {
     border: 1px solid rgba(var(--fc), 0.2);
   }
 }
-input.input:focus,
-select.input:focus,
-label.input > input:not([type]):focus,
-label.input > input[type=password]:focus {
+.input:focus,
+label.field > input:not([type]):focus,
+label.field > input[type=password]:focus,
+.simple_style input:not([type]):focus,
+.simple_style input[type=password]:focus,
+.simple_style input[type=text]:focus,
+.simple_style select:focus {
   border-color: rgba(var(--fc), 0.3);
 }
-label.input {
+label.field {
   display: block;
   margin: 1em 0;
 }
-label.input input:not([type]),
-label.input input[type=text],
-label.input input[type=password] {
+label.field input:not([type]),
+label.field input[type=text],
+label.field input[type=password] {
   margin-top: 0.5em;
 }
-label.input + .btn {
+label.field + .btn {
   margin-top: 1.5em;
 }
 hr {
@@ -261,13 +288,15 @@ hr::after {
   background-color: rgb(var(--bc));
   padding: 0 0.5em;
 }
-nav.plain > ul {
+nav.plain > ul,
+.simple_style nav > ul {
   list-style: none;
   display: block;
   margin: 0;
   padding: 0;
 }
-nav.plain > ul > li {
+nav.plain > ul > li,
+.simple_style nav > ul > li {
   display: inline-block;
   padding-left: 0;
 }

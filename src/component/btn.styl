@@ -1,35 +1,38 @@
-a, button, input[type=submit], input[type=reset]
-  &.btn
-    box-sizing: border-box
-    display: inline-block
-    border: none
-    vertical-align: middle // 否则 button 和 a 会错位
-    outline: none
+.btn
+  box-sizing: border-box
+  display: inline-block
+  border: none
+  vertical-align: middle // 否则 button 和 a 会错位
+  outline: none
 
-    clickable()
-    border-radius()
+  clickable()
+  border-radius()
 
-    font-size: fs-sm()
-    padding: 0 1em
-    height: 2.5em
-    margin: 0
-    cursor: pointer
+  font-size: fs-sm()
+  padding: 0 1em
+  height: 2.5em
+  margin: 0
+  cursor: pointer
 
-    +light()
-      background-color: fc(.1)
-    +dark()
-      background-color: fc(.16)
-    color: fc()
-    &.contract
-      background-color: fc()
-      color: bc()
-    
-    &.fw
-      display: block
-      width: 100%
-    &.big, &.fw // full width 就大
-      font-size: fs()
+  +light()
+    background-color: fc(.1)
+  +dark()
+    background-color: fc(.16)
+  color: fc()
+  &.contract
+    background-color: fc()
+    color: bc()
+  
+  &.fw
+    display: block
+    width: 100%
+  &.big, &.fw // full width 就大
+    font-size: fs()
 
 a.btn
   text-align: center
   line-height: 2.5em
+
+.simple_style
+  button, input[type=submit], input[type=reset]
+    @extends .btn
