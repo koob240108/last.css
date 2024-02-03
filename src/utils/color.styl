@@ -5,6 +5,6 @@ fc(alpha = false)
     'rgb(%s)' % var(--fc)
 bc(alpha = false)
   if alpha
-    'rgba(%s, %s)' % var(--bc) alpha
+    s('rgba(%s, %s)', var(--bc), alpha)
   else
     'rgb(%s)' % var(--bc)

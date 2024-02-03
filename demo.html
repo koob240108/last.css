@@ -131,18 +131,27 @@ select * from users;</code></pre>
         </ul>
       </article>
 
-      <article><h2>menu</h2>
-        <menu class="menu">
-          <li>
-            <button>这是一个 `menu item`</button>
-          </li>
-          <li>
-            <button>这是一个 `menu item`</button>
-          </li>
-          <li>
-            <button>这是一个 `menu item`</button>
-          </li>
-        </ul>
+      <article><h2>menu in dialog</h2>
+        <button id="open_dialog">open</button>
+        <dialog id="dialog_target" class="menu_container">
+          <menu>
+            <li><button>这是一个 `menu item`</button></li>
+            <li><button>这是一个 `menu item`</button></li>
+            <li><button>这是一个 `menu item`</button></li>
+          </menu>
+        </dialog>
+
+        <script>
+          const btn_open = document.getElementById('open_dialog')
+          const btn_close = document.getElementById('close_dialog')
+          const dialog = document.getElementById('dialog_target')
+          btn_open.addEventListener('click', () => {
+            dialog.showModal()
+          })
+          btn_close.addEventListener('click', () => {
+            dialog.close()
+          })
+        </script>
       </article>
     </main>
   </body>

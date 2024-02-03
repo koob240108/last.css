@@ -1,15 +1,32 @@
-menu.menu
-  margin: 0
-  padding: 0
-  list-style: none
-  li
-    padding: 0
-    & + li
-      border-top: 1px solid fc(.18)
+dialog.menu_container
+  border: none
+  outline: none
+  padding: 1em // 给 box-shadow 留空间
+  background: transparent
+  animation: fade_in_from_above .3s
+  &::backdrop
+    background-color: fc(.3)
+    animation: fade_in .38s
+  menu
+    margin: 0
+    padding: .1em 0
+    list-style: none
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px
+    background: bc()
+    li
+      padding: 0
+      & + li
+        border-top: 1px solid fc(.05)
     button
-      @extends .btn
+      outline: none
+      border: none
+      background-color: transparent
+
+      display: block
       width: 100%
-      border-top-left-radius: 0
-      border-top-right-radius: 0
-      border-bottom-left-radius: 0
-      border-bottom-right-radius: 0
+      line-height: 3
+      font-size: fs-sm()
+      padding: 0 3em
+      clickable()
+      &:focus
+        outline: solid fc(.15)

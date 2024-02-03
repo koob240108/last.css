@@ -97,7 +97,8 @@ h3 + h4 {
 h4 + h5 {
   margin-top: 0;
 }
-:root {
+:root,
+::backdrop {
 /* sizes 尺寸 */
   --fs: 16px;
   --fs-sm: calc(var(--fs) * 0.875);
@@ -108,34 +109,38 @@ h4 + h5 {
   --black: 0, 0, 0;
   --fc: var(--black);
   --bc: var(--white);
+}
+@media (prefers-color-scheme: light) {
+  :root,
+  ::backdrop {
+    --fc: var(--black);
+    --bc: var(--white);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root,
+  ::backdrop {
+    --fc: var(--white);
+    --bc: var(--black);
+  }
+}
+:root {
 /* 样式 */
   line-height: 1;
   font-size: var(--fs);
   color: rgb(var(--fc));
   background-color: rgb(var(--bc));
 }
-@media (prefers-color-scheme: light) {
-  :root {
-    --fc: var(--black);
-    --bc: var(--white);
-  }
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --fc: var(--white);
-    --bc: var(--black);
-  }
-}
 .btn,
 .simple_style button,
 .simple_style input[type=submit],
-.simple_style input[type=reset],
-menu.menu li button {
+.simple_style input[type=reset] {
   box-sizing: border-box;
   display: inline-block;
   border: none;
   vertical-align: middle;
   outline: none;
+  cursor: pointer;
   border-radius: calc(var(--fs) * 0.25);
   font-size: var(--fs-sm);
   padding: 0 1em;
@@ -147,23 +152,20 @@ menu.menu li button {
 .btn:focus,
 .simple_style button:focus,
 .simple_style input[type=submit]:focus,
-.simple_style input[type=reset]:focus,
-menu.menu li button:focus {
+.simple_style input[type=reset]:focus {
   outline: solid rgba(var(--fc), 0.2);
 }
 .btn:active,
 .simple_style button:active,
 .simple_style input[type=submit]:active,
-.simple_style input[type=reset]:active,
-menu.menu li button:active {
-  opacity: 0.88;
+.simple_style input[type=reset]:active {
+  opacity: 0.8;
 }
 @media (prefers-color-scheme: light) {
   .btn,
   .simple_style button,
   .simple_style input[type=submit],
-  .simple_style input[type=reset],
-  menu.menu li button {
+  .simple_style input[type=reset] {
     background-color: rgba(var(--fc), 0.06);
   }
 }
@@ -171,24 +173,21 @@ menu.menu li button:active {
   .btn,
   .simple_style button,
   .simple_style input[type=submit],
-  .simple_style input[type=reset],
-  menu.menu li button {
+  .simple_style input[type=reset] {
     background-color: rgba(var(--fc), 0.16);
   }
 }
 .btn.contract,
 .simple_style button.contract,
 .simple_style input[type=submit].contract,
-.simple_style input[type=reset].contract,
-menu.menu li button.contract {
+.simple_style input[type=reset].contract {
   background-color: rgb(var(--fc));
   color: rgb(var(--bc));
 }
 .btn.fw,
 .simple_style button.fw,
 .simple_style input[type=submit].fw,
-.simple_style input[type=reset].fw,
-menu.menu li button.fw {
+.simple_style input[type=reset].fw {
   display: block;
   width: 100%;
 }
@@ -196,12 +195,10 @@ menu.menu li button.fw {
 .simple_style button.big,
 .simple_style input[type=submit].big,
 .simple_style input[type=reset].big,
-menu.menu li button.big,
 .btn.fw,
 .simple_style button.fw,
 .simple_style input[type=submit].fw,
-.simple_style input[type=reset].fw,
-menu.menu li button.fw {
+.simple_style input[type=reset].fw {
   font-size: var(--fs);
 }
 a.btn {
@@ -315,23 +312,117 @@ nav.plain > ul > li,
   margin: 1em 0;
   line-height: 1.3;
 }
-menu.menu {
+dialog.menu_container {
+  border: none;
+  outline: none;
+  padding: 1em;
+  background: transparent;
+  animation: fade_in_from_above 0.3s;
+}
+dialog.menu_container::backdrop {
+  background-color: rgba(var(--fc), 0.3);
+  animation: fade_in 0.38s;
+}
+dialog.menu_container menu {
   margin: 0;
-  padding: 0;
+  padding: 0.1em 0;
   list-style: none;
+  box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+  background: rgb(var(--bc));
 }
-menu.menu li {
+dialog.menu_container menu li {
   padding: 0;
 }
-menu.menu li + li {
-  border-top: 1px solid rgba(var(--fc), 0.18);
+dialog.menu_container menu li + li {
+  border-top: 1px solid rgba(var(--fc), 0.05);
 }
-menu.menu li button {
+dialog.menu_container menu button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  display: block;
   width: 100%;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  line-height: 3;
+  font-size: var(--fs-sm);
+  padding: 0 3em;
+  cursor: pointer;
+}
+dialog.menu_container menu button:focus {
+  outline: solid rgba(var(--fc), 0.2);
+}
+dialog.menu_container menu button:active {
+  opacity: 0.8;
+}
+dialog.menu_container menu button:focus {
+  outline: solid rgba(var(--fc), 0.15);
+}
+@-moz-keyframes fade_in_from_above {
+  0% {
+    opacity: 0;
+    transform: translateY(-16%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade_in_from_above {
+  0% {
+    opacity: 0;
+    transform: translateY(-16%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade_in_from_above {
+  0% {
+    opacity: 0;
+    transform: translateY(-16%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade_in_from_above {
+  0% {
+    opacity: 0;
+    transform: translateY(-16%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade_in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .container {
   max-width: 900px;
