@@ -315,6 +315,7 @@ nav.plain > ul > li,
 dialog.menu_container {
   border: none;
   outline: none;
+  color: inherit;
   padding: 1em;
   background: transparent;
   animation: fade_in_from_above 0.3s;
@@ -333,12 +334,20 @@ dialog.menu_container menu {
 dialog.menu_container menu li {
   padding: 0;
 }
-dialog.menu_container menu li + li {
-  border-top: 1px solid rgba(var(--fc), 0.05);
+@media (prefers-color-scheme: light) {
+  dialog.menu_container menu li + li {
+    border-top: 1px solid rgba(var(--fc), 0.05);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  dialog.menu_container menu li + li {
+    border-top: 1px solid rgba(var(--fc), 0.15);
+  }
 }
 dialog.menu_container menu button {
   outline: none;
   border: none;
+  color: inherit;
   background-color: transparent;
   display: block;
   width: 100%;
@@ -353,8 +362,15 @@ dialog.menu_container menu button:focus {
 dialog.menu_container menu button:active {
   opacity: 0.8;
 }
-dialog.menu_container menu button:focus {
-  outline: solid rgba(var(--fc), 0.15);
+@media (prefers-color-scheme: light) {
+  dialog.menu_container menu button:focus {
+    outline: solid rgba(var(--fc), 0.15);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  dialog.menu_container menu button:focus {
+    outline: solid rgba(var(--fc), 0.25);
+  }
 }
 @-moz-keyframes fade_in_from_above {
   0% {

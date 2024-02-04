@@ -1,6 +1,6 @@
 {
   "name": "last.css",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "一个简单的 css 样式集",
   "main": "last.css",
   "keywords": [],
@@ -8,9 +8,11 @@
   "license": "UNLICENSED",
   "scripts": {
     "watch": "stylus -w ./src/index.styl -o ./last.css",
-    "build": "stylus ./src/index.styl -o ./last.css"
+    "build": "stylus ./src/index.styl -o ./last.css",
+    "demo": "http-server"
   },
   "devDependencies": {
+    "http-server": "^14.1.1",
     "stylus": "^0.62.0"
   }
 }

@@ -1,6 +1,7 @@
 dialog.menu_container
   border: none
   outline: none
+  color: inherit
   padding: 1em // 给 box-shadow 留空间
   background: transparent
   animation: fade_in_from_above .3s
@@ -16,10 +17,14 @@ dialog.menu_container
     li
       padding: 0
       & + li
-        border-top: 1px solid fc(.05)
+        +light()
+          border-top: 1px solid fc(.05)
+        +dark()
+          border-top: 1px solid fc(.15)
     button
       outline: none
       border: none
+      color: inherit
       background-color: transparent
 
       display: block
@@ -29,4 +34,7 @@ dialog.menu_container
       padding: 0 3em
       clickable()
       &:focus
-        outline: solid fc(.15)
+        +light()
+          outline: solid fc(.15)
+        +dark()
+          outline: solid fc(.25)
