@@ -11,4 +11,9 @@ const css_vars = {
   fc: (opacity = 1) => `rgba(var(--fc), ${opacity})`,
   /** background color */
   bc: (opacity = 1) => `rgba(var(--bc), ${opacity})`,
+
+  // 不如 “朴”
+  // get: new Proxy({}, {
+  //   get: (_, key) => `var(--${key})`,
+  // }),
 }
