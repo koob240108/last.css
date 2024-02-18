@@ -153,6 +153,22 @@ select * from users;</code></pre>
           })
         </script>
       </article>
+
+      <article><h2>CSS in JS</h2>
+        <div id="cssinjs">CSS in JS</div>
+      </article>
     </main>
+
+    <script type="module">
+      import { css_vars } from './variables.js'
+
+      const dom = document.getElementById('cssinjs')
+      dom.style.fontSize = css_vars.fs
+      dom.style.color = css_vars.bc(.9)
+      dom.style.backgroundColor = css_vars.fc(.88)
+      dom.style.height = css_vars.us(4)
+      dom.style.marginLeft = css_vars.fs_sm
+      dom.style.marginRight = css_vars.fs_xs
+    </script>
   </body>
 </html>
