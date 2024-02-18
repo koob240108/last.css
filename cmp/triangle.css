@@ -2,7 +2,7 @@
   --size: var(---size, 1rem); /* 有默认值的变量名前多一个 - */
   --height: calc(var(--size) * .866);
 
-  display: block;
+  display: var(---display, block);
   box-sizing: border-box;
 
   width: var(--size);

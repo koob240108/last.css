@@ -3,8 +3,8 @@
   --width: var(---width, 1px);
   width: var(--size);
   height: var(--size);
-  display: block;
-  position: relative;
+  display: var(---display, block);
+  position: var(---position, relative);
 }
 .last.x::before, .last.x::after {
   content: "";
