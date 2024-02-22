@@ -1,14 +1,13 @@
 {
   "name": "last.css",
-  "version": "0.2.9",
+  "version": "0.3.1",
   "description": "一个简单的 css 样式集",
   "main": "last.css",
   "keywords": [],
   "author": "PPz",
   "license": "UNLICENSED",
   "scripts": {
-    "watch": "stylus -w ./src/index.styl -o ./last.css",
-    "build": "stylus ./src/index.styl -o ./last.css",
+    "build": "node ./build/pro",
     "demo": "http-server"
   },
   "devDependencies": {
