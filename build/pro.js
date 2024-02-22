@@ -21,7 +21,11 @@ function cp_js() {
 
 function build_cmp() {
   mkdir(Dist('cmp'))
-  for(const name of ['triangle', 'x'])
+  for(const name of [
+    'triangle',
+    'x',
+    'switch',
+  ])
     compile(Src(`cmp/${name}.styl`), Dist(`cmp/${name}.css`))
 }
 
