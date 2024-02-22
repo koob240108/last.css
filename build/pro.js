@@ -1,45 +1,46 @@
-const stylus = require('stylus')
-const fs = require('fs')
 const Path = require('path')
+const fs = require('fs')
+const { compile } = require('./stylus')
+const { mkdir, cp } = require('./fs')
 
 const P = (...target) => Path.join(__dirname, '..', ...target)
 const Dist = (...target) => P('dist', ...target)
 const Src = (...target) => P('src', ...target)
 
 function build_global() {
-  const content_index = fs.readFileSync('./src/global/index.styl').toString()
-  stylus(content_index)
-    .set('paths', ['src/global'])
-    .render((err, css) => {
-      if (err)
-        throw err
-
-      fs.writeFileSync(Dist('last.css'), css, {
-        flag: 'w'
-      })
-      console.log('last.css build success')
-    })
+  compile(
+    Src('global/index.styl'),
+    Dist('last.css'),
+  )
+  console.log('last.css build success')
 }
 
 function cp_js() {
-  fs.cpSync(Src('js/'), Dist(), {
-    recursive: true,
-  })
+  cp(Src('js/'), Dist())
+}
+
+function build_cmp() {
+  mkdir(Dist('cmp'))
+  for(const name of ['triangle', 'x'])
+    compile(Src(`cmp/${name}.styl`), Dist(`cmp/${name}.css`))
+}
+
+function cp_others() {
+  for (const file of [
+    'package.json',
+    'README.md',
+  ])
+    cp(P(file), Dist(file))
 }
 
 function main() {
-  try {
-    const root = Dist()
-    fs.mkdirSync(root)
-  } catch(err) {
-    if (err.code === 'EEXIST')
-      console.log('dist 文件夹已存在')
-    else
-      throw err
-  }
+  fs.rmSync(Dist(), { recursive: true, force: true })
+  mkdir(Dist())
 
   build_global()
+  build_cmp()
   cp_js()
+  cp_others()
 
   console.log('job done')
 }

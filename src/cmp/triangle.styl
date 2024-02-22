@@ -1,0 +1,14 @@
+.last.triangle
+  --size: var(---size, 1rem) // 有默认值的变量名前多一个 -
+  --height: calc(var(--size) * .866)
+
+  display: var(---display, block)
+  box-sizing: border-box
+
+  width: var(--size)
+  height: var(--height)
+
+  border-top: 0 solid transparent
+  border-bottom: var(--height) solid currentcolor
+  border-left: calc(var(--size) / 2) solid transparent
+  border-right: calc(var(--size) / 2) solid transparent
