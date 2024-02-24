@@ -25,6 +25,7 @@ function build_cmp() {
     'triangle',
     'x',
     'switch',
+    'menu',
   ])
     compile(Src(`cmp/${name}.styl`), Dist(`cmp/${name}.css`))
 }

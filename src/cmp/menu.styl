@@ -1,0 +1,28 @@
+@import '../global/utils/index'
+
+.last.menu
+  display: block
+  --size: var(---size, var(--fs))
+  --width: calc(.125 * var(--size))
+
+  position: var(---position, relative)
+  width: var(--size)
+  height: var(--size)
+
+  &::before, &::after
+    content: ''
+    display: block
+    position: absolute
+    left: 0
+    right: 0
+  &::before
+    top: var(--width)
+    bottom: var(--width)
+    border: transparent
+    border-top: var(--width) solid currentColor
+    border-bottom: var(--width) solid currentColor
+
+  &::after
+    top: calc(.4375 * var(--size))
+    bottom: calc(.4375 * var(--size))
+    background: currentColor
