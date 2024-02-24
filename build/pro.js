@@ -15,8 +15,8 @@ function build_global() {
   console.log('last.css build success')
 }
 
-function cp_js() {
-  cp(Src('js/'), Dist())
+function cp_static() {
+  cp(Src('static/'), Dist())
 }
 
 function build_cmp() {
@@ -43,7 +43,7 @@ function main() {
 
   build_global()
   build_cmp()
-  cp_js()
+  cp_static()
   cp_others()
 
   console.log('job done')

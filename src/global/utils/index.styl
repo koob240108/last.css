@@ -4,7 +4,10 @@
 
 focusable()
   &:focus
-    outline: solid fc(.2)
+    +light()
+      outline: solid fc(.12)
+    +dark()
+      outline: solid fc(.2)
 
 clickable()
   focusable()
